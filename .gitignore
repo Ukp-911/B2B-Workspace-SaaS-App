@@ -1,0 +1,15 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Editor
+.vscode/
+
+# Node (for the React app later)
+node_modules/
+dist/
