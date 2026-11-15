@@ -149,4 +149,3 @@ def require_delete(authuser:AuthUser=Depends(get_auth_user)):
 def require_edit(authuser:AuthUser=Depends(get_auth_user)):
     authuser.has_permission("edit")
     return authuser
-

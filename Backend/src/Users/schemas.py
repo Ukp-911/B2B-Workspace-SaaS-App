@@ -1,4 +1,4 @@
-from pydantic import BaseModel,ConfigDict
+from pydantic import BaseModel,ConfigDict,Field
 from uuid import UUID
 class Usercreate(BaseModel):
     username:str
@@ -22,3 +22,14 @@ class refresh_request(BaseModel):
 class Refresh_response(BaseModel):
     status:str
     token:str
+
+class UpdateUsername(BaseModel):
+    username:str = Field(min_length=3, max_length=30)
+
+class ResponseUsernameUpdate(BaseModel):
+    msg:str
+    new_username:UpdateUsername
+
+class New_pswd(BaseModel):
+    new_pswd=str=Field(min_length=8, max_length=128)
+    old_pswd=str

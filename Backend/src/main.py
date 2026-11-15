@@ -5,6 +5,6 @@ from src.Users.routes import app_routes
 app=FastAPI()
 
 app.include_router(auth_routes,prefix="/auth")
-app.include_router(app_routes,prefix="")
+app.include_router(app_routes,prefix="/users")
 
 Base.metadata.create_all(bind=engine)

@@ -1,4 +1,4 @@
-from sqlalchemy import Column,String,Boolean,Uuid,ForeignKey,UniqueConstraint,func
+from sqlalchemy import Column,String,Boolean,Uuid,ForeignKey,UniqueConstraint
 from src.database.connections import Base
 import uuid
 
@@ -8,7 +8,6 @@ class Users(Base):
     username=Column(String,nullable=False)
     email=Column(String,unique=True,nullable=False)
     password=Column(String,nullable=False)
-    role=Column(String,default="user",nullable=False)
     is_verified=Column(Boolean,default=False)
 
 class Organisation(Base):
