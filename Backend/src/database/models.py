@@ -14,7 +14,7 @@ class Organisation(Base):
     __tablename__="organisation"
     org_id= Column(Uuid, primary_key=True, nullable=False, default=uuid.uuid4)
     name=Column(String,nullable=False)
-    created_by=Column(Uuid, ForeignKey("users.uid"),nullable=False) 
+    created_by=Column(Uuid, ForeignKey("users.uid"),nullable=True) 
 
 class Membership(Base):
     __tablename__="membership"
@@ -30,4 +30,4 @@ class Tasks(Base):
     org_id=Column(Uuid,ForeignKey("organisation.org_id"),index=True, nullable=False)
     task=Column(String,nullable=False)
     status=Column(String,nullable=False,default="todo")
-    created_by=Column(Uuid,ForeignKey("users.uid"),nullable=False)
+    created_by=Column(Uuid,ForeignKey("users.uid"),nullable=True)
